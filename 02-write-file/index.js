@@ -11,3 +11,7 @@ stdin.on('data', data => {
     }
     txt.write(data);
 });
+process.on('exit', () => stdout.write('Goodbye!'));
+process.on('SIGINT', () => {
+    process.exit();
+});
